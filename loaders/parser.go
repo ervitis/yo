@@ -21,7 +21,7 @@ package loaders
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 
 	parser "github.com/cloudspannerecosystem/memefish"
 	"github.com/cloudspannerecosystem/memefish/ast"
@@ -30,7 +30,7 @@ import (
 )
 
 func NewSpannerLoaderFromDDL(fpath string) (*SpannerLoaderFromDDL, error) {
-	b, err := ioutil.ReadFile(fpath)
+	b, err := os.ReadFile(fpath)
 	if err != nil {
 		return nil, err
 	}
